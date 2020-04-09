@@ -30,7 +30,15 @@ curl -s https://aerokube.com/cm/bash | bash \
 ```
 Панель управления будет доступна по ссылке http://localhost:8080/
 
-При запуске тестов в контейнере Selenoid НЕ будет доступно тестовое приложение по адресу http://localhost:4000. Необходимо узнать IP адрес вашей физической машины и прописать его в `config.yaml` в `site_url`. Для этого можно воспользоваться командой `ifconfig` в терминале.
+При запуске тестов в контейнере Selenoid НЕ будет доступно тестовое приложение по адресу http://localhost:4000. Необходимо узнать IP адрес вашей физической машины и прописать его в `config.yaml` в `site_url` в тестах. Так же необходимо изменить IP адрес тестового сервиса как указано в README файле [https://gitlab.monq.ru/p.alekseev/flask-app-example](https://gitlab.monq.ru/p.alekseev/flask-app-example), а конкретно изменить файл `docker-compose.yml`. Добавить строку `BACKEND_HOST`.
+```yaml
+  app:
+    environment:
+      BACKEND_HOST: http://192.168.0.12:4000
+```
+
+
+Чтобы узнать свой IP можно воспользоваться командой `ifconfig` в терминале.
 
 Искать строку похожую на:
 ```bash
@@ -79,4 +87,5 @@ py.test -s -v tests/web/test_subscribe.py::TestsMain::test_check_subscribe_time
 ```
 
 #### Результат выполнения
-Видео - [https://github.com/arkuz/subscribe_tests/blob/master/run_tests_.mp4](https://github.com/arkuz/subscribe_tests/blob/master/run_tests_.mp4)
+Видео запуска на локалном браузере - [run_tests_.mp4](https://github.com/arkuz/subscribe_tests/blob/master/run_tests_.mp4)
+Видео запуска в Selenoid - [selenoid_run.mp4](https://github.com/arkuz/subscribe_tests/blob/master/selenoid_run.mp4)
