@@ -79,4 +79,4 @@ py.test -s -v tests/web/test_subscribe.py::TestsMain::test_check_subscribe_time
 ```
 
 #### Результат выполнения
-Видео - []()
+Видео - [https://github.com/arkuz/subscribe_tests/blob/master/run_tests_.mp4](https://github.com/arkuz/subscribe_tests/blob/master/run_tests_.mp4)
