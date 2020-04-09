@@ -3,7 +3,7 @@ browser: "Chrome" # Chrome or Firefox
 
 implicitly_wait: 10 # ожидание по умолчанию для WEB тестов
 
-api_url: "http://localhost:4000/"
+api_url: "http://192.168.0.12:4000/"
 
 site_url: "http://192.168.0.12:4000/ui" # замените на ваш IP, введите команду в терминале ifconfig
 #site_url: "http://localhost:4000/ui" # для запуска на локальном браузере
