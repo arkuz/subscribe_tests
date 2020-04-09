@@ -30,7 +30,7 @@ curl -s https://aerokube.com/cm/bash | bash \
 ```
 Панель управления будет доступна по ссылке http://localhost:8080/
 
-При запуске тестов в контейнере Selenoid НЕ будет доступно тестовое приложение по адресу http://localhost:4000. Необходимо узнать IP адрес вашей физической машины и прописать его в `config.yaml` в `site_url` в тестах. Так же необходимо изменить IP адрес тестового сервиса как указано в README файле [https://gitlab.monq.ru/p.alekseev/flask-app-example](https://gitlab.monq.ru/p.alekseev/flask-app-example), а конкретно изменить файл `docker-compose.yml`. Добавить строку `BACKEND_HOST`.
+При запуске тестов в контейнере Selenoid НЕ будет доступно тестовое приложение по адресу http://localhost:4000. Необходимо узнать IP адрес вашей физической машины и прописать его в `config.yaml` в `site_url` и `api_url` в тестах. Так же необходимо изменить IP адрес тестового сервиса как указано в README файле [https://gitlab.monq.ru/p.alekseev/flask-app-example](https://gitlab.monq.ru/p.alekseev/flask-app-example), а конкретно изменить файл `docker-compose.yml`. Добавить строку `BACKEND_HOST`.
 ```yaml
   app:
     environment:
